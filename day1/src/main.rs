@@ -83,10 +83,10 @@ fn main() {
 
     
 
-    let mut largest_three = VecDeque::new();
+    let mut largest_three: VecDeque<i32> = VecDeque::new();
     // need to get last num in vec
     for val in added_vec {
-        if val > largest_three.back()  {
+        if Some(&val) > largest_three.back() {
             largest_three.push_back(val);
         }
         if largest_three.len() > 3 {
