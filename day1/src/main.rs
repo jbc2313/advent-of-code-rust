@@ -1,3 +1,4 @@
+use std::collections::VecDeque;
 use std::env;
 use std::fs;
 use std::io::Read;
@@ -64,19 +65,35 @@ fn main() {
         }
 
     }
-    println!("Length of added-vec = {}", added_vec.len());
-    println!("added_vec = {:?}", added_vec);
+    //println!("Length of added-vec = {}", added_vec.len());
+    //println!("added_vec = {:?}", added_vec);
     
+   
+    // SOLUTION FOR PART 1 
+    // #######################
     let mut largest_num = 0;
-    for val in added_vec {
-        if val > largest_num {
-            largest_num = val;
+    for val in &added_vec {
+        if val > &largest_num {
+            largest_num = *val;
         }
-
+    
     };
-
+    
     println!("Largest Num = {}", largest_num);
 
+    
 
+    let mut largest_three = VecDeque::new();
+    // need to get last num in vec
+    for val in added_vec {
+        if val > largest_three.back()  {
+            largest_three.push_back(val);
+        }
+        if largest_three.len() > 3 {
+            largest_three.pop_front();
+        }
+    }
+
+    println!("largest_three = {:?}", largest_three);
 
 }
