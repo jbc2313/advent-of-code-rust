@@ -66,4 +66,17 @@ fn main() {
     }
     println!("Length of added-vec = {}", added_vec.len());
     println!("added_vec = {:?}", added_vec);
+    
+    let mut largest_num = 0;
+    for val in added_vec {
+        if val > largest_num {
+            largest_num = val;
+        }
+
+    };
+
+    println!("Largest Num = {}", largest_num);
+
+
+
 }
