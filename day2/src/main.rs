@@ -13,7 +13,24 @@ fn main() {
 
     for el in pre_vec {
         let my_c: Vec<_> = el.chars().collect();
-        println!(" first char = {} ", my_c[0]);
-        println!(" sec char = {} ", my_c[2]);
+        let opp_choice = my_c[0];
+        let my_choice = my_c[2];
+        //println!(" first char = {} ", opp_choice);
+        //println!(" sec char = {} ", my_choice);
+
+        if opp_choice == 'A' {
+            //println!("A WAS SELECTED");
+            if my_choice == 'X' {
+                println!(" They CHOSE A, I CHOSE X");
+            }
+        }
+        // if opp_choice == 'B' {
+        //     println!(" B was HIT");
+        // }
+        //
+        // if opp_choice == 'C' {
+        //     println!(" C was CHOSE");
+        // }
+        
     }
 }
