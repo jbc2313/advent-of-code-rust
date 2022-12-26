@@ -89,34 +89,21 @@ fn main() {
     println!("TOP 3 = {:?}", top3);
     
 
+
     let mut largest_three: VecDeque<i32> = VecDeque::new();
-    // need to get last num in vec
-    for val in added_vec {
-        if Some(&val) > largest_three.front() {
-            largest_three.push_back(val); 
-        } else {
-            if largest_three.len() >= 2 {
-                if &val > &largest_three[1] {
-                    largest_three.push_back(val);
-                } else { 
-                    if &val > &largest_three[2] {
-                        largest_three.push_back(val);
-                    }
-                }
-            } else {
-                
-            }
+    
+    for num in added_vec {
+        if Some(&num) > largest_three.back(){
+            largest_three.push_back(num); 
+        }else{
+            largest_three.push_front(num);
         }
         if largest_three.len() > 3 {
             largest_three.pop_front();
         }
     }
-    
-    println!("largest_three = {:?}", largest_three);
-    
-    
-    // 201026 is NOT the correct answer try again noob
-    //let total_cal = largest_three[0] + largest_three[1] + largest_three[2]; 
-    //println!("Total Cal = {}", total_cal);
+
+    println!("Largest three numbers = {:?}", largest_three);
+    println!("Added up = {}", largest_three[1] + largest_three[0] + largest_three[2]);
 
 }
