@@ -11,7 +11,9 @@ fn main() {
 
     println!("new pre sorted vec = {:?}", pre_vec);
 
-    for el in pre_vec { 
-        
+    for el in pre_vec {
+        let my_c: Vec<_> = el.chars().collect();
+        println!(" first char = {} ", my_c[0]);
+        println!(" sec char = {} ", my_c[2]);
     }
 }
