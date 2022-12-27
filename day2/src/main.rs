@@ -22,6 +22,29 @@ fn main() {
             //println!("A WAS SELECTED");
             if my_choice == 'X' {
                 println!(" They CHOSE A, I CHOSE X");
+            } else if my_choice == 'Y' {
+               println!(" They CHOSE A, I CHOSE Y"); 
+            } else if my_choice == 'Z' {
+                println!("THEY CHOSE A, I chose z");
+            }
+
+        }
+
+        if opp_choice == 'B' {
+            match my_choice {
+                'X' => println!("X followed B"),
+                'Y' => println!("Y followed B"),
+                'Z' => println!("Z followed B"),
+                _ => println!("You entered something wrong"),
+            }
+        }
+
+        if opp_choice == 'C' { 
+            match my_choice {
+                'X' => println!("X followed C"),
+                'Y' => println!("Y followed C"),
+                'Z' => println!("Z followed C"),
+                _ => println!("You entered something wrong"),
             }
         }
         // if opp_choice == 'B' {
