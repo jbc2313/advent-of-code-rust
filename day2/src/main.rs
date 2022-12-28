@@ -27,7 +27,7 @@ fn main() {
             if my_choice == 'X' {
                 println!("They CHOSE A, I CHOSE X");
                 println!("1 Point for X(Rock) + 3 points for DRAW");
-                my_game_points = my_game_points + 6;
+                my_game_points = my_game_points + 4;
             } else if my_choice == 'Y' {
                println!("They CHOSE A, we CHOSE Y");
                println!("2 points for Y(paper) + 6 points for win");
@@ -93,4 +93,5 @@ fn main() {
 
     println!("TOTAL POINTS = {}", my_game_points);
     // 9374 IS WRONG TRY AGAIN..... :/
+    // 15605 is WRONG
 }
