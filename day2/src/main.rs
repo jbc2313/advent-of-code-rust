@@ -94,4 +94,5 @@ fn main() {
     println!("TOTAL POINTS = {}", my_game_points);
     // 9374 IS WRONG TRY AGAIN..... :/
     // 15605 is WRONG
+    // PART 1 ANSWER = 15337
 }
