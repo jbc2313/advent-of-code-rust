@@ -20,14 +20,16 @@ fn main() {
         //println!(" first char = {} ", opp_choice);
         //println!(" sec char = {} ", my_choice);
 
+        // lines with --- are none srategy choices
+
         if opp_choice == 'A' {
-            //println!("A WAS SELECTED");
             if my_choice == 'X' {
-                println!(" They CHOSE A, I CHOSE X");
+                println!("--- They CHOSE A, I CHOSE X ---");
             } else if my_choice == 'Y' {
-               println!(" They CHOSE A, I CHOSE Y"); 
+               println!("They CHOSE A, we CHOSE Y");
+               println!("2 points for Y(paper) + 6 points for win");
             } else if my_choice == 'Z' {
-                println!("THEY CHOSE A, I chose z");
+                println!("--- THEY CHOSE A, I chose z ---");
             }
 
         }
@@ -35,28 +37,32 @@ fn main() {
         if opp_choice == 'C' {
             match my_choice {
                 'X' => {
-                    println!("X followed B");
-                    println!("You picked Rock");
+                    println!("---X followed C----");
+                    println!("---You picked Rock---");
                 },
                 'Y' => {
-                    println!("Y followed B")
+                    println!("--- Y followed C ----")
                 },
                 'Z' => {
-                    println!("Z followed B")
+                    println!("Z followed C");
+                    println!("3 points for Z(scissors), 3 Point for DRAW");
                 },
                 _ => {
-                    println!("You entered something wrong")
+                    println!("--- You entered something wrong ---")
                 },
            
             }
         };
 
-        if opp_choice == 'C' { 
+        if opp_choice == 'B' { 
             match my_choice {
-                'X' => println!("X followed C"),
-                'Y' => println!("Y followed C"),
-                'Z' => println!("Z followed C"),
-                _ => println!("You entered something wrong"),
+                'X' => {
+                    println!("X followed B");
+                    println!("1 Point for X(Rock), 0 for losing");
+                },
+                'Y' => {println!("---Y followed B---")},
+                'Z' => {println!("---Z followed B---")},
+                _ => {println!("You entered something wrong")},
             }
         }
         
