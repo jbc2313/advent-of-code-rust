@@ -24,7 +24,7 @@ fn main() {
         
         // ROCK
         if opp_choice == 'A' {
-            if my_choice == 'X' {
+            if my_choice == 'Z' {
                 println!("They CHOSE A, I CHOSE X");
                 println!("2 Point for X(PAPER) + 6 points for WIN");
                 my_game_points = my_game_points + 8;
@@ -32,7 +32,7 @@ fn main() {
                println!("They CHOSE A, we CHOSE Y");
                println!("1 points for Y(ROCK) + 3 points for DRAW");
                my_game_points = my_game_points + 4;
-            } else if my_choice == 'Z' {
+            } else if my_choice == 'X' {
                 println!("--- THEY CHOSE A, I chose z ---");
                 println!("3 points for Z(scissors) + 0 points for losing");
                 my_game_points = my_game_points + 3;
@@ -43,7 +43,7 @@ fn main() {
         // scissors
         if opp_choice == 'C' {
             match my_choice {
-                'X' => {
+                'Z' => {
                     println!("---X followed C----");
                     println!("1 point for X(rock) + 6 points for WIN");
                     my_game_points = my_game_points + 7;
@@ -53,7 +53,7 @@ fn main() {
                     println!("3 points for Y(scissors) + 3 points for DRAW");
                     my_game_points = my_game_points + 6;
                 },
-                'Z' => {
+                'X' => {
                     println!("Z followed C");
                     println!("2 points for Z(paper), 0 Point for LOOSE");
                     my_game_points = my_game_points + 2;
@@ -68,7 +68,7 @@ fn main() {
         // paper
         if opp_choice == 'B' { 
             match my_choice {
-                'X' => {
+                'Z' => {
                     println!("X followed B");
                     println!("2 Point for X(scissor), 6 for WIN");
                     my_game_points = my_game_points + 8;
@@ -79,7 +79,7 @@ fn main() {
                     my_game_points = my_game_points + 5;
                 },
 
-                'Z' => {
+                'X' => {
                     println!("---Z followed B---");
                     println!("1 points for Z(rock) + 0 point for LOOSE");
                     my_game_points = my_game_points + 1;
