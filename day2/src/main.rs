@@ -26,12 +26,12 @@ fn main() {
         if opp_choice == 'A' {
             if my_choice == 'X' {
                 println!("They CHOSE A, I CHOSE X");
-                println!("1 Point for X(Rock) + 3 points for DRAW");
-                my_game_points = my_game_points + 4;
+                println!("1 Point for X(Rock) + 6 points for WIN");
+                my_game_points = my_game_points + 7;
             } else if my_choice == 'Y' {
                println!("They CHOSE A, we CHOSE Y");
-               println!("2 points for Y(paper) + 6 points for win");
-               my_game_points = my_game_points + 8;
+               println!("2 points for Y(paper) + 3 points for DRAW");
+               my_game_points = my_game_points + 5;
             } else if my_choice == 'Z' {
                 println!("--- THEY CHOSE A, I chose z ---");
                 println!("3 points for Z(scissors) + 0 points for losing");
@@ -50,13 +50,13 @@ fn main() {
                 },
                 'Y' => {
                     println!("--- Y followed C ----");
-                    println!("2 points for Y(paper) + 0 points for LOSS");
-                    my_game_points = my_game_points + 2;
+                    println!("2 points for Y(paper) + 3 points for DRAW");
+                    my_game_points = my_game_points + 5;
                 },
                 'Z' => {
                     println!("Z followed C");
-                    println!("3 points for Z(scissors), 3 Point for DRAW");
-                    my_game_points = my_game_points + 6;
+                    println!("3 points for Z(scissors), 0 Point for LOOSE");
+                    my_game_points = my_game_points + 3;
                 },
                 _ => {
                     println!("--- You entered something wrong ---")
@@ -70,8 +70,8 @@ fn main() {
             match my_choice {
                 'X' => {
                     println!("X followed B");
-                    println!("1 Point for X(Rock), 0 for losing");
-                    my_game_points = my_game_points + 1;
+                    println!("1 Point for X(Rock), 6 for WIN");
+                    my_game_points = my_game_points + 7;
                 },
                 'Y' => {
                     println!("---Y followed B---");
@@ -81,8 +81,8 @@ fn main() {
 
                 'Z' => {
                     println!("---Z followed B---");
-                    println!("3 points for Z(scissors) + 6 point for WIN");
-                    my_game_points = my_game_points + 9;
+                    println!("3 points for Z(scissors) + 0 point for LOOSE");
+                    my_game_points = my_game_points + 3;
                 },
                 _ => {println!("You entered something wrong")},
             }
@@ -95,4 +95,5 @@ fn main() {
     // 9374 IS WRONG TRY AGAIN..... :/
     // 15605 is WRONG
     // PART 1 ANSWER = 15337
+    // PART 2 ANSWER = 
 }
