@@ -11,6 +11,8 @@ fn main() {
 
     println!("new pre sorted vec = {:?}", pre_vec);
 
+    let game_points = 0;
+
     for el in pre_vec {
         let my_c: Vec<_> = el.chars().collect();
         let opp_choice = my_c[0];
@@ -30,14 +32,24 @@ fn main() {
 
         }
 
-        if opp_choice == 'B' {
+        if opp_choice == 'C' {
             match my_choice {
-                'X' => println!("X followed B"),
-                'Y' => println!("Y followed B"),
-                'Z' => println!("Z followed B"),
-                _ => println!("You entered something wrong"),
+                'X' => {
+                    println!("X followed B");
+                    println!("You picked Rock");
+                },
+                'Y' => {
+                    println!("Y followed B")
+                },
+                'Z' => {
+                    println!("Z followed B")
+                },
+                _ => {
+                    println!("You entered something wrong")
+                },
+           
             }
-        }
+        };
 
         if opp_choice == 'C' { 
             match my_choice {
@@ -47,13 +59,6 @@ fn main() {
                 _ => println!("You entered something wrong"),
             }
         }
-        // if opp_choice == 'B' {
-        //     println!(" B was HIT");
-        // }
-        //
-        // if opp_choice == 'C' {
-        //     println!(" C was CHOSE");
-        // }
         
     }
 }
