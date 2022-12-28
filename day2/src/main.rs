@@ -70,8 +70,8 @@ fn main() {
             match my_choice {
                 'Z' => {
                     println!("X followed B");
-                    println!("2 Point for X(scissor), 6 for WIN");
-                    my_game_points = my_game_points + 8;
+                    println!("3 Point for X(scissor), 6 for WIN");
+                    my_game_points = my_game_points + 9;
                 },
                 'Y' => {
                     println!("---Y followed B---");
