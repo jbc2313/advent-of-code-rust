@@ -11,7 +11,7 @@ fn main() {
 
     println!("new pre sorted vec = {:?}", pre_vec);
 
-    let game_points = 0;
+    let mut my_game_points = 0;
 
     for el in pre_vec {
         let my_c: Vec<_> = el.chars().collect();
@@ -28,6 +28,7 @@ fn main() {
             } else if my_choice == 'Y' {
                println!("They CHOSE A, we CHOSE Y");
                println!("2 points for Y(paper) + 6 points for win");
+               my_game_points = my_game_points + 8;
             } else if my_choice == 'Z' {
                 println!("--- THEY CHOSE A, I chose z ---");
             }
@@ -46,6 +47,7 @@ fn main() {
                 'Z' => {
                     println!("Z followed C");
                     println!("3 points for Z(scissors), 3 Point for DRAW");
+                    my_game_points = my_game_points + 6;
                 },
                 _ => {
                     println!("--- You entered something wrong ---")
@@ -59,6 +61,7 @@ fn main() {
                 'X' => {
                     println!("X followed B");
                     println!("1 Point for X(Rock), 0 for losing");
+                    my_game_points = my_game_points + 1;
                 },
                 'Y' => {println!("---Y followed B---")},
                 'Z' => {println!("---Z followed B---")},
@@ -66,5 +69,9 @@ fn main() {
             }
         }
         
-    }
+    };
+
+
+    println!("TOTAL POINTS = {}", my_game_points);
+    // 9374 IS WRONG TRY AGAIN..... :/
 }
