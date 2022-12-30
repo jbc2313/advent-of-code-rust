@@ -2,6 +2,8 @@ use std::env;
 use std::fs;
 use std::io::Read;
 
+mod priority;
+
 fn main() {
 
     //pull in the txt file and parse data into a Vec 
@@ -19,5 +21,7 @@ fn main() {
         println!("front({:?}) = {:?}\nback({:?}) = {:?}\n===========", front.len(), front, back.len(), back);
 
     }
+
+    priority::letter_priority();
 
 }
