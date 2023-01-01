@@ -5,7 +5,7 @@ pub fn print_type_of<T>(_: &T) {
     println!("{}", std::any::type_name::<T>());
 }
 
-pub fn letter_priority() {
+pub fn letter_priority() -> (HashMap<String, i32>, HashMap<String, i32>) {
     let lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let mut lowercase: HashMap<String, i32> = HashMap::new();
     for idx in 1..=26 {
@@ -37,6 +37,7 @@ pub fn letter_priority() {
     //
     // }
     
+    return (lowercase, uppercase);
 
 
 }

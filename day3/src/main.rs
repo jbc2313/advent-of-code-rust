@@ -11,6 +11,9 @@ fn main() {
     let pre_vec = info.split_terminator("\n").collect::<Vec<&str>>();
     //println!("new pre sorted vec = {:?}", pre_vec);
     
+    // pull in the scoring hashmaps
+    let (upper, lower) = priority::letter_priority();
+
     //need to split each element in half, directly in the middle. the length of all is an even
     //number so they will split in two easily.
     for el in pre_vec {
@@ -20,8 +23,10 @@ fn main() {
         let (front, back) = el.split_at(split_point);
         println!("front({:?}) = {:?}\nback({:?}) = {:?}\n===========", front.len(), front, back.len(), back);
 
+        // need to find the one letter front and back both have, and get the score of that letter.
+
     }
 
-    priority::letter_priority();
+
 
 }
