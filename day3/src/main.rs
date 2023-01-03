@@ -24,8 +24,15 @@ fn main() {
         println!("front({:?}) = {:?}\nback({:?}) = {:?}\n===========", front.len(), front, back.len(), back);
 
         // need to find the one letter front and back both have, and get the score of that letter.
-       // el.chars();
+
+        //let el_list [_;0] = [];
+        let el_vec = el.chars().collect::<Vec<char>>();
+        // for char in el.chars() {
+        //       
+        // }
     }
+
+
 
 
 
