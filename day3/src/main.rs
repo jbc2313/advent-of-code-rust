@@ -27,9 +27,15 @@ fn main() {
 
         //let el_list [_;0] = [];
         let el_vec = el.chars().collect::<Vec<char>>();
-        // for char in el.chars() {
-        //       
-        // }
+        let mut needle: char = '?'; 
+        for char in el_vec {
+            if char == needle {
+                break;
+            }
+            needle = char; 
+            println!("{:?}", char);
+        }
+        println!("NEEDLE = {:?}", needle);
     }
 
 
