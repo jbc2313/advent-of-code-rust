@@ -26,9 +26,10 @@ fn main() {
         // need to find the one letter front and back both have, and get the score of that letter.
 
         //let el_list [_;0] = [];
-        let el_vec = el.chars().collect::<Vec<char>>();
+        let front_el_vec = front.chars().collect::<Vec<char>>();
+        let back_el_vec = back.chars().collect::<Vec<char>>();
         let mut needle: char = '?'; 
-        for char in el_vec {
+        for char in back_el_vec {
             if char == needle {
                 break;
             }
