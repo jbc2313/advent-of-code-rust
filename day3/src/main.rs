@@ -21,7 +21,7 @@ fn main() {
         let el_length = el.len();
         let split_point = el_length / 2;
         let (front, back) = el.split_at(split_point);
-        println!("front({:?}) = {:?}\nback({:?}) = {:?}\n===========", front.len(), front, back.len(), back);
+        println!("front({:?}) = {:?}\nback({:?}) = {:?}\n", front.len(), front, back.len(), back);
 
         // need to find the one letter front and back both have, and get the score of that letter.
 
@@ -29,14 +29,24 @@ fn main() {
         let front_el_vec = front.chars().collect::<Vec<char>>();
         let back_el_vec = back.chars().collect::<Vec<char>>();
         let mut needle: char = '?'; 
-        for char in back_el_vec {
-            if char == needle {
+        let mut matched: bool = false;
+        for char in &front_el_vec {
+
+            needle = *char;
+            for el in &back_el_vec {
+                if needle == *el {
+                    println!("NEEDLE MATCHES EL");
+                    matched = true;
+                    break;
+                }
+            }
+            if matched == true {
+                println!("LOOP FINISHED NEEDLE FOUND");
                 break;
             }
-            needle = char; 
-            println!("{:?}", char);
         }
         println!("NEEDLE = {:?}", needle);
+        println!("========================");
     }
 
 
