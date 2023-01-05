@@ -16,6 +16,7 @@ fn main() {
 
     //need to split each element in half, directly in the middle. the length of all is an even
     //number so they will split in two easily.
+    let mut needle_vec: Vec<char> = Vec::new();
     for el in pre_vec {
         //println!("Length of element = {:?}", el.len());
         let el_length = el.len();
@@ -35,7 +36,7 @@ fn main() {
             needle = *char;
             for el in &back_el_vec {
                 if needle == *el {
-                    println!("NEEDLE MATCHES EL");
+                    println!("NEEDLE MATCHES EL:{:?}", el);
                     matched = true;
                     break;
                 }
@@ -46,8 +47,11 @@ fn main() {
             }
         }
         println!("NEEDLE = {:?}", needle);
+        needle_vec.push(needle);
         println!("========================");
     }
+
+    println!("LIST OF NEEDLES = {:?}", needle_vec);
 
 
 
