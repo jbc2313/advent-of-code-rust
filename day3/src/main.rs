@@ -52,6 +52,7 @@ fn main() {
     }
 
     println!("LIST OF NEEDLES = {:?}", needle_vec);
+    println!("READY to MOVE on?");
 
 
 
