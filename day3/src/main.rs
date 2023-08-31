@@ -10,7 +10,7 @@ fn main() {
     //println!("new pre sorted vec = {:?}", pre_vec);
     
     // pull in the scoring hashmaps
-    let (upper, lower) = priority::letter_priority();
+    let (lower, upper) = priority::letter_priority();
 
     //need to split each element in half, directly in the middle. the length of all is an even
     //number so they will split in two easily.
@@ -46,7 +46,7 @@ fn main() {
         }
         //println!("NEEDLE = {:?}", needle);
         needle_vec.push(needle);
-        println!("========================");
+        //println!("========================");
     }
 
     println!("LIST OF NEEDLES = {:?}", needle_vec);
@@ -56,17 +56,22 @@ fn main() {
     let mut point_counter: i32 = 0; 
     for el in needle_vec {
         let is_upper = el.is_ascii_uppercase();
+        //println!("{:?} is upper", is_upper);
         if is_upper {
-            for (key, val) in &upper {
-                if el == *key {
-                   point_counter += val; 
+            for (key, val) in upper.clone().into_iter() {
+                if el == key {
+                    //println!("{:?} == {:?} increment counter", el, key);
+                    point_counter += val; 
                 };
             };
         }else{
+            //Two ways to do the same thing
             for (key, val) in &lower {
                 if el == *key {
+                   // println!("{:?} == {:?} increment counter", el, key);
                     point_counter += val;
                 };
+                
             };
         };
     };
