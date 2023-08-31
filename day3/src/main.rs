@@ -1,6 +1,4 @@
-use std::env;
 use std::fs;
-use std::io::Read;
 
 mod priority;
 
@@ -22,7 +20,7 @@ fn main() {
         let el_length = el.len();
         let split_point = el_length / 2;
         let (front, back) = el.split_at(split_point);
-        println!("front({:?}) = {:?}\nback({:?}) = {:?}\n", front.len(), front, back.len(), back);
+    //    println!("front({:?}) = {:?}\nback({:?}) = {:?}\n", front.len(), front, back.len(), back);
 
         // need to find the one letter front and back both have, and get the score of that letter.
 
@@ -36,23 +34,44 @@ fn main() {
             needle = *char;
             for el in &back_el_vec {
                 if needle == *el {
-                    println!("NEEDLE MATCHES EL:{:?}", el);
+    //                println!("NEEDLE MATCHES EL:{:?}", el);
                     matched = true;
                     break;
                 }
             }
             if matched == true {
-                println!("LOOP FINISHED NEEDLE FOUND");
+     //           println!("LOOP FINISHED NEEDLE FOUND");
                 break;
             }
         }
-        println!("NEEDLE = {:?}", needle);
+        //println!("NEEDLE = {:?}", needle);
         needle_vec.push(needle);
         println!("========================");
     }
 
     println!("LIST OF NEEDLES = {:?}", needle_vec);
     println!("READY to MOVE on?");
+    println!("==========================");
+
+    let mut point_counter: i32 = 0; 
+    for el in needle_vec {
+        let is_upper = el.is_ascii_uppercase();
+        if is_upper {
+            for (key, val) in &upper {
+                if el == *key {
+                   point_counter += val; 
+                };
+            };
+        }else{
+            for (key, val) in &lower {
+                if el == *key {
+                    point_counter += val;
+                };
+            };
+        };
+    };
+
+    println!("Point Counter = {:?}", point_counter);
 
 
 
